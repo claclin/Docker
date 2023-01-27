@@ -18,7 +18,7 @@ services:
     www:
         build: .
         ports: 
-            - "8021:8021"
+            - "80:80"
         volumes:
             - ./www:/var/www/html
         links:
@@ -30,7 +30,7 @@ services:
         links: 
             - db:db
         ports:
-            - 8000:8021
+            - 8000:80
         environment:
             MYSQL_USER: root
             MYSQL_PASSWORD: test
