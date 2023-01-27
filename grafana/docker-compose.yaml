@@ -1,0 +1,10 @@
+version: '2'
+services:
+  grafana:
+    image: grafana/grafana:8.0.6
+    container_name: grafana
+    restart: always
+    volumes:
+    - /opt/Core/application_host/grafana:/var/lib/grafana
+    ports:
+    - 3000:3000
