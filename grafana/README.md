@@ -1,1 +1,1 @@
-Instalamos Grafana en docker
+Instalamos Grafana en docker.
