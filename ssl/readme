@@ -1,1 +1,2 @@
-
+Se trata de un docker que nos crea un certificado de tal manera que luego apuntando a un http nos redirige a un https. Es decir conseguimos mediante http una web segura https.
+Si ejecutamos un curl -I http://botclaudi.ddns.net veremos que nos redirecciona a una https
