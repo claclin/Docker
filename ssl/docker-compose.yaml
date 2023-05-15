@@ -19,7 +19,7 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
     volumes:
-      - /home/clau/certs:/etc/nginx/certs:/etc/nginx/certs:rw
+      - /home/clau/certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
       - nginx-proxy:rw
