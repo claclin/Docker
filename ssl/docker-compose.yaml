@@ -24,7 +24,7 @@ services:
     volumes_from:
       - nginx-proxy:rw
   www:
-    image: nginx
+    image: claclin73/ngnix:2.0
     restart: always
     expose:
       - "80"
