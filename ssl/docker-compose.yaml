@@ -34,5 +34,5 @@ services:
     environment:
       - VIRTUAL_HOST=botclaudi.ddns.net
       - LETSENCRYPT_HOST=botclaudi.ddns.net
-      - LETSENCRYPT_EMAIL=claclin73@gmail.comm
+      - LETSENCRYPT_EMAIL=claclin73@gmail.com
    
