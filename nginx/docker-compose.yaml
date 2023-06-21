@@ -11,7 +11,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   proxy:
-    image: claclin73/ngnix:3.0
+    image: claclin73/ngnix:2.0
     container_name: web
     restart: always
     expose:
