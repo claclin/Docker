@@ -26,7 +26,7 @@ services:
     volumes_from:
       - nginx-proxy:rw
   www:
-    image: claclin73/ngnix:2.0
+    image: claclin73/ngnix:3.0
     container_name: web
     restart: always
     expose:
