@@ -1,1 +1,1 @@
-Para arrancar la pagina web pondremos claudi.com:80. 
+Para arrancar la pagina web pondremos claudi.com:8321. Hemos metido en el hosts file del Windows la linea de claudi.com hacia la 127.0.0.1
