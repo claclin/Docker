@@ -36,7 +36,7 @@ services:
       - /home/clau/HTML/:/usr/share/nginx/html/
       - /home/clau/nginx/access.log:/var/log/nginx/logs/access.log
       - /home/clau/nginx/error.log:/var/log/nginx/logs/error.log
-      - /home/clau/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      
     environment:
       - VIRTUAL_HOST=botclaudi.ddns.net
       - LETSENCRYPT_HOST=botclaudi.ddns.net
