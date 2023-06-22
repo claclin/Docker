@@ -1,4 +1,4 @@
-version: '4'
+version: '5'
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
