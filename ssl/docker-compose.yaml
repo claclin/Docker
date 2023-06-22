@@ -26,7 +26,7 @@ services:
     volumes_from:
       - nginx-proxy:rw
   www:
-    image: claclin73/ngnix:1.25.1
+    image: claclin73/ngnix:2.0
     container_name: web
     restart: always
     expose:
@@ -34,8 +34,6 @@ services:
     volumes:
       - /home/clau/HTML/index.html:/usr/share/nginx/html/index.html:ro
       - /home/clau/HTML/:/usr/share/nginx/html/
-      - /home/clau/nginx/access.log:/var/log/nginx/logs/access.log
-      - /home/clau/nginx/error.log:/var/log/nginx/logs/error.log
     environment:
       - VIRTUAL_HOST=botclaudi.ddns.net
       - LETSENCRYPT_HOST=botclaudi.ddns.net
