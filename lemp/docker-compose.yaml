@@ -20,4 +20,4 @@ services:
     image: php:8-fpm
     container_name: php
     volumes:
-      - ./src:/var/www/html
+      - /home/clau/HTML:/var/www/html
