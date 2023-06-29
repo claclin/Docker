@@ -11,7 +11,7 @@ services:
       - "8321:80"
     volumes:
       - /home/clau/HTML/:/var/www/html/
-      - /home/calu/HTML/index.html:/var/www/html/index.html
+      - /home/clau/HTML/index.html:/var/www/html/index.html
       - /home/clau/HTML/default.conf:/etc/nginx/conf.d/default.conf
     links:
       - php-fpm
