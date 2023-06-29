@@ -26,6 +26,8 @@ services:
     image: php:8.1.21RC1-fpm
     container_name: php
     restart: always
+    ports:
+      - "8000:9000"
     volumes:
       - /home/clau/HTML/:/var/www/html
  
