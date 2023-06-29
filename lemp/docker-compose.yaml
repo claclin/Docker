@@ -1,21 +1,12 @@
 version: '2.1'
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    container_name: nginx_proxy2
-    restart: always
-    ports:
-      - "8321:80"
-      - "443:443"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-
   ngnix:
     image: claclin73/ngnix:1.25.1
     container_name: web2
     restart: always
-    expose:
-      - "80"
+    ports:
+      - "80:80"
+      - "8321:80"
     environment:
       VIRTUAL_HOST: claudi.com
     volumes:
