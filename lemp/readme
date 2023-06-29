@@ -1,1 +1,2 @@
-Configuramos un servidor lemp completo. Con esto para acceder a la pagina web es http://claudi.com:8321/index.html y al php es http://claudi.com:8321
+Configuramos un servidor lemp completo. Con esto para acceder a la pagina web es http://claudi.com:8321/index.html y al php es http://claudi.com:8321.
+En el fichero default.conf aparece  index index.php index.html, esto significa que primero probara en buscar un index.php y si no lo encuentra entonces va a buscar un index.html
