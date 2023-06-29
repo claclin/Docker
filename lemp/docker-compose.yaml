@@ -4,10 +4,8 @@ version: "3.3"
 # Servidor nginx
 services:
   web:
-  	# versión
     image: nginx:latest
     container_name: web2
-    # Puerto 8080 
     ports:
       - "8080:80"
       - "8321:80"
