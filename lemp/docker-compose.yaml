@@ -23,7 +23,7 @@ services:
     # php
     php74-service:
         image: php:8.1.21RC1-fpm
-        container_name: php74-container
+        container_name: php
         ports:
             - "9000:9000"
         volumes:
