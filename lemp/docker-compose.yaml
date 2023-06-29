@@ -3,12 +3,22 @@ version: "3.3"
 
 # Servidor nginx
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx_proxy
+    restart: always
+    ports:
+      - "8321:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
   web:
     image: claclin73/ngnix:1.25.1
     container_name: web2
-    ports:
-      - "8080:80"
-      - "8321:80"
+    expose:
+      - "80"
+    environment:
+      VIRTUAL_HOST: claudi.com
     volumes:
       - /home/clau/HTML/:/var/www/html/
       - /home/clau/HTML/index.html:/var/www/html/index.html
