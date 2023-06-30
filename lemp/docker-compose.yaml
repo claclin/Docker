@@ -31,3 +31,16 @@ services:
     container_name: php
     volumes:
       - /home/clau/HTML:/var/www/html
+
+  db:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    ports: 
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: ivrdb
+      MYSQL_ROOT_PASSWORD: claudi 
+    volumes:
+      - /home/clau/HTML/mariadb/persistent:/var/lib/mysql
