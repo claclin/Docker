@@ -1,6 +1,5 @@
 # Los archivos docker-compose.yml son versionados, lo que significa que es muy importante indicar la versión de las instrucciones que queremos darle.
 version: "3.3"
-
   db:
     image: mariadb
     container_name: mariadb
@@ -23,5 +22,5 @@ version: "3.3"
         - mysql:mysql
     environment:
         MYSQL_USERNAME: root
-        MYSQL_ROOT_PASSWORD: hakase-labs123
+        MYSQL_ROOT_PASSWORD: claudi
         PMA_HOST: db
