@@ -5,9 +5,8 @@ services:
     container_name: nginx_proxy
     restart: always
     ports:
-      - "80:81"
+      - "80:80"
       - "443:443"
-      - "3309:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /home/clau/certs:/etc/nginx/certs:ro
@@ -30,7 +29,7 @@ services:
     image: claclin73/ngnix:1.25.1
     container_name: web2
     expose:
-      - "81"
+      - "80"
     volumes:
       - /home/clau/HTML/:/var/www/html/
       - /home/clau/HTML/default.conf:/etc/nginx/conf.d/default.conf
@@ -63,8 +62,8 @@ services:
     container_name: admin
     links: 
         - mysql:mysql
-    expose:
-        - "80"
+    ports:
+        - "3309:80"
     environment:
         MYSQL_USERNAME: root
         MYSQL_ROOT_PASSWORD: claudi
