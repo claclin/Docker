@@ -13,15 +13,4 @@ services:
       MYSQL_ROOT_PASSWORD: claudi 
     volumes:
       - /home/clau/HTML/mariadb/persistent:/var/lib/mysql
-  phpmyadmin:
-    image: 'phpmyadmin/phpmyadmin'
-    container_name: phpadmin
-    restart: always
-    ports:
-       - '8000:80'
-    links:
-        - mysql:db
-    environment:
-        MYSQL_USERNAME: root
-        MYSQL_ROOT_PASSWORD: claudi
-        PMA_HOST: db
+
