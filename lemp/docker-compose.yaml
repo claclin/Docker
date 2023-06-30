@@ -20,7 +20,7 @@ services:
     ports:
        - '8000:80'
     links:
-        - mysql:mysql
+        - mysql:db
     environment:
         MYSQL_USERNAME: root
         MYSQL_ROOT_PASSWORD: claudi
