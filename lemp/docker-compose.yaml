@@ -63,8 +63,8 @@ services:
     container_name: admin
     links: 
         - mysql:mysql
-    ports:
-        - 3309:80
+    expose:
+        - "80"
     environment:
         MYSQL_USERNAME: root
         MYSQL_ROOT_PASSWORD: claudi
