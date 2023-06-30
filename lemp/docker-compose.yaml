@@ -51,7 +51,7 @@ services:
       - db:db
     ports:
       - 3309:80
-        environment:
-            MYSQL_USERNAME: root
-            PMA_HOST: db
-            MYSQL_ROOT_PASSWORD: claudi
+    environment:
+      MYSQL_USERNAME: root
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: claudi
