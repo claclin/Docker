@@ -1,12 +1,13 @@
-## Hi
-My name is Claudio, I´m from Spain and I am working as Professional Service.
+## Hola (texto realizado con Markdown)
+Aqui encontraras mis proyectos con Dockers.:+1:
 
-* Currently working for Unify Communications.
+* Seguimos trabajando y desarrollando
 
-##Skills
-* Working with Dockers.
-* Learning Python, PHP.
+## Desarrollos
+* Grafana.
+* Servidor LAMP.
+* Servidor LEMP.
+* MariaDB.
+* Nginx.
 
-##Contact
-* You can contact me in my e-mail: claclin73@gmail.com
 
