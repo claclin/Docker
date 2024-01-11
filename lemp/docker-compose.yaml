@@ -9,7 +9,7 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /home/clau/certs:/etc/nginx/certs:ro
+      - /home/claudi/certs:/etc/nginx/certs:ro
       - /etc/nginx/vhost.d
       - /usr/share/nginx/html
     labels:
@@ -20,7 +20,7 @@ services:
     container_name: letsencrypt
     restart: always
     volumes:
-      - /home/clau/certs:/etc/nginx/certs:rw
+      - /home/claudi/certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
       - nginx-proxy:rw
@@ -32,8 +32,8 @@ services:
     expose:
       - "80"
     volumes:
-      - /home/clau/HTML/:/var/www/html/
-      - /home/clau/HTML/default.conf:/etc/nginx/conf.d/default.conf
+      - /home/claudi/MANUALES/:/var/www/html/
+      - /home/claudi/MANUALES/default.conf:/etc/nginx/conf.d/default.conf
     links:
       - php-fpm
     environment:
@@ -47,7 +47,7 @@ services:
     container_name: php
     restart: always
     volumes:
-      - /home/clau/HTML:/var/www/html
+      - /home/claudi/MANUALES:/var/www/html
 
   mysql:
     image: mariadb
@@ -58,7 +58,7 @@ services:
     environment:
         MYSQL_ROOT_PASSWORD: claudi 
     volumes:
-        - /home/clau/HTML/mariadb/persistent:/var/lib/mysql
+        - /home/claudi/mariadb/persistent:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: admin
