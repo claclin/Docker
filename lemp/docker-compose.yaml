@@ -41,6 +41,20 @@ services:
       - LETSENCRYPT_HOST=botclaudi.ddns.net
       - LETSENCRYPT_EMAIL=claclin73@gmail.com
 
+  web2:
+    image: claclin73/ngnix:1.25.1
+    container_name: web4
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - /home/claudi/MANUALES2/:/var/www/html/
+      - /home/claudi/MANUALES2/default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      - VIRTUAL_HOST=conocimientos.ddns.net
+      - LETSENCRYPT_HOST=conocimientos.ddns.net
+      - LETSENCRYPT_EMAIL=oscarramiro73@gmail.com
+
   # Configuración de php-fpm
   php-fpm:
     image: php:8-fpm
