@@ -1,2 +1,4 @@
-Configuramos un servidor lemp completo. Con esto para acceder a la pagina web es http://botclaudi.ddns.net/index.html y al php es http://botclaudi.ddns.net.
+Configuramos un servidor lemp completo. Con esto para acceder a la pagina web es https://botclaudi.ddns.net/index.html y al php es https://botclaudi.ddns.net.
 En el fichero default.conf aparece  index index.php index.html, esto significa que primero probara en buscar un index.php y si no lo encuentra entonces va a buscar un index.html
+
+Hemos creado otro dominio conocimientos.ddns.net y al igual que el anterior tambien esta accesible https://conocimientos.ddns.net/index.html
