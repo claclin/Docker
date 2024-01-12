@@ -52,3 +52,11 @@ services:
       - VIRTUAL_HOST=conocimientos.ddns.net
       - LETSENCRYPT_HOST=conocimientos.ddns.net
       - LETSENCRYPT_EMAIL=oscarramiro73@gmail.com
+
+  # Configuración de php-fpm
+  php-fpm:
+    image: php:8-fpm
+    container_name: php
+    restart: always
+    volumes:
+      - /home/claudi/MANUALES:/var/www/html
