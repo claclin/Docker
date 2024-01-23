@@ -16,7 +16,7 @@ services:
     expose:
       - "80"
     environment:
-      VIRTUAL_HOST: claudi.com
+      VIRTUAL_HOST: conocimientos.ddns.net
     volumes:
       - /home/clau/HTML/index.html:/usr/share/nginx/html/index.html:ro
       - /home/clau/HTML/:/usr/share/nginx/html/
