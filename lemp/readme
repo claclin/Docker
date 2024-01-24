@@ -2,3 +2,5 @@ Configuramos un servidor lemp completo. Con esto para acceder a la pagina web es
 En el fichero default.conf aparece  index index.php index.html, esto significa que primero probara en buscar un index.php y si no lo encuentra entonces va a buscar un index.html
 
 Hemos creado otro dominio conocimientos.ddns.net y al igual que el anterior tambien esta accesible https://conocimientos.ddns.net/index.html
+
+Tenemos el fichero default.conf del ngnix_proxy mapeado donde lo hemos manipulado para que el puerto 8000 se enrute siempre como http y no https
