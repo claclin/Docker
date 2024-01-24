@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   nginx-proxy:
-    image: claclin73/nginx_proxy:1.0
+    image: claclin73/nginx_proxy:1.1
     container_name: nginx_proxy
     restart: always
     ports:
