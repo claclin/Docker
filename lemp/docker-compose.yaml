@@ -21,7 +21,7 @@ services:
     container_name: letsencrypt
     restart: always
     volumes:
-      - /home/clau/certs:/etc/nginx/certs:rw
+      - /home/claudi/certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
       - nginx-proxy:rw
