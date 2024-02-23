@@ -89,7 +89,7 @@ services:
         PMA_HOST: mysql
   flowise:
     image: flowiseai/flowise
-    container_name: flowise
+    container_name: flowi
     restart: always
     environment:
         DATABASE_TYPE:  mysql
