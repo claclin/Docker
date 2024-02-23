@@ -92,6 +92,7 @@ services:
     container_name: flowi
     restart: always
     environment:
+        PORT: 8001
         DATABASE_TYPE:  mysql
         DATABASE_PORT:  "3306"
         DATABASE_HOST:  "localhost"
