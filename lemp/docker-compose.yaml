@@ -87,27 +87,3 @@ services:
         MYSQL_USERNAME: root
         MYSQL_ROOT_PASSWORD: claudi
         PMA_HOST: mysql
-  flowise:
-    image: flowiseai/flowise
-    container_name: flowi
-    restart: always
-    environment:
-        PORT: 8001
-        DATABASE_TYPE:  mysql
-        DATABASE_PORT:  "3306"
-        DATABASE_HOST:  "192.168.1.200"
-        DATABASE_NAME:  "flowise"
-        DATABASE_USER:  "root"
-        DATABASE_PASSWORD:  "claudi"
-        FLOWISE_USERNAME:  claudi
-        FLOWISE_PASSWORD:  Erandio21.
-        FLOWISE_SECRETKEY_OVERWRITE:  Erandio21.
-        LOG_PATH:  /root/.flowise/logs
-        DEBUG: true
-        LOG_LEVEL:  debug
-    
-    ports:
-        - "8001:8001"
-    volumes:
-            - /home/claudi/Docker/flowi:/root/.flowise
-    command: /bin/sh -c "sleep 3; flowise start"
