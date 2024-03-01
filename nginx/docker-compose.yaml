@@ -18,6 +18,6 @@ services:
     environment:
       VIRTUAL_HOST: conocimientos.ddns.net
     volumes:
-      - /home/clau/HTML/index.html:/usr/share/nginx/html/index.html:ro
-      - /home/clau/HTML/:/usr/share/nginx/html/
+      - /home/claudi/MANUALES2/index.html:/usr/share/nginx/html/index.html:ro
+      - /home/claudi/MANUALES2/:/usr/share/nginx/html/
  
