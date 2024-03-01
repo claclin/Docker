@@ -718,3 +718,54 @@ QueryFailedError: ER_UNKNOWN_COLLATION: Unknown collation: 'utf8mb4_0900_ai_ci'
     at Protocol.write (/usr/local/lib/node_modules/flowise/node_modules/mysql/lib/protocol/Protocol.js:38:16)
     at Socket.<anonymous> (/usr/local/lib/node_modules/flowise/node_modules/mysql/lib/Connection.js:88:28)
 2024-03-01 17:17:18 [ERROR]: ❌[server]: Flowise Server shut down error: TypeError: Cannot read properties of undefined (reading 'flush')
+2024-03-01 17:54:49 [ERROR]: [server]: Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/openai/error.js:47:20)
+    at OpenAI.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:263:33)
+    at OpenAI.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:306:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /usr/local/lib/node_modules/flowise/node_modules/@langchain/openai/dist/chat_models.cjs:650:29
+    at async RetryOperation._fn (/usr/local/lib/node_modules/flowise/node_modules/p-retry/index.js:50:12)
+2024-03-01 17:55:31 [ERROR]: [server]: Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/openai/error.js:47:20)
+    at OpenAI.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:263:33)
+    at OpenAI.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:306:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /usr/local/lib/node_modules/flowise/node_modules/@langchain/openai/dist/chat_models.cjs:650:29
+    at async RetryOperation._fn (/usr/local/lib/node_modules/flowise/node_modules/p-retry/index.js:50:12)
+2024-03-01 17:56:45 [ERROR]: unhandledRejection: Error: Error: Credentials could not be decrypted.
+Error: Error: Error: Credentials could not be decrypted.
+    at AnalyticHandler.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/src/handler.js:304:19)
+Error: Error: Error: Credentials could not be decrypted.
+    at AnalyticHandler.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/src/handler.js:304:19)
+2024-03-01 17:56:45 [ERROR]: unhandledRejection: Error: Error: Credentials could not be decrypted.
+Error: Error: Error: Credentials could not be decrypted.
+    at AnalyticHandler.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/src/handler.js:304:19)
+Error: Error: Error: Credentials could not be decrypted.
+    at AnalyticHandler.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/src/handler.js:304:19)
+2024-03-01 17:56:45 [ERROR]: unhandledRejection:  Error: Error: Credentials could not be decrypted.
+Error: Error: Error: Credentials could not be decrypted.
+    at AnalyticHandler.init (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/src/handler.js:304:19)
+2024-03-01 17:57:11 [ERROR]: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/openai/error.js:47:20)
+    at OpenAI.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:263:33)
+    at OpenAI.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:306:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /usr/local/lib/node_modules/flowise/node_modules/@langchain/openai/dist/chat_models.cjs:650:29
+    at async RetryOperation._fn (/usr/local/lib/node_modules/flowise/node_modules/p-retry/index.js:50:12)
+2024-03-01 17:57:11 [ERROR]: [server]: Error: Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+Error: Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+    at buildFlow (/usr/local/lib/node_modules/flowise/dist/utils/index.js:333:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async App.buildChatflow (/usr/local/lib/node_modules/flowise/dist/index.js:1708:40)
+    at async /usr/local/lib/node_modules/flowise/dist/index.js:1152:13
+2024-03-01 17:57:36 [ERROR]: [server]: Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+Error: 401 Incorrect API key provided: sk-nLqQu***************************************Snrq. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (/usr/local/lib/node_modules/flowise/node_modules/openai/error.js:47:20)
+    at OpenAI.makeStatusError (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:263:33)
+    at OpenAI.makeRequest (/usr/local/lib/node_modules/flowise/node_modules/openai/core.js:306:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /usr/local/lib/node_modules/flowise/node_modules/@langchain/openai/dist/chat_models.cjs:650:29
+    at async RetryOperation._fn (/usr/local/lib/node_modules/flowise/node_modules/p-retry/index.js:50:12)
