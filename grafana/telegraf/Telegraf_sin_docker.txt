@@ -1,0 +1,62 @@
+
+1.-	Si queremos monitorizar la maquina del CMS por ejemplo, hemos de instalar TELEGRAF en la maquina sin docker, dado que de lo contrario lo que nos va a 
+	monitorizar es el docker y no el CMS en si.
+	
+2.-	Actualizamos los repositorios del SUSE:
+
+	a.-	zypper rr -a
+		zypper ar -f http://download.opensuse.org/distribution/leap/15.3/repo/non-oss/ "openSUSE-Leap-15.3-NonOSS"
+		zypper ar -f http://download.opensuse.org/update/leap/15.3/non-oss/ "openSUSE-Leap-15.3-NonOss-Updates"
+		zypper ar -f http://download.opensuse.org/update/leap/15.3/oss/ "openSUSE-Leap-15.3-Updates"
+		zypper ar -f http://download.opensuse.org/distribution/leap/15.3/repo/oss/ "openSUSE-Leap-15.3-OSS"
+		zypper ar -f http://download.opensuse.org/update/leap/15.3/sle/ "openSUSE-Leap-15.3-Updates-From-SLE"
+		zypper ar -f http://download.opensuse.org/update/leap/15.3/backports/ "openSUSE-Leap-15.3-Backports"
+		zypper --gpg-auto-import-keys ref 
+
+3.-	Instalamos el paquete wget
+
+	a.- zypper install wget
+
+4.-	Instalamos el software telegraf
+
+	a.-	wget https://dl.influxdata.com/telegraf/releases/telegraf-1.14.4-1.x86_64.rpm --no-check-certificate
+	b.-	rpm -ivh --nodeps /root/telegraf-*.rpm
+	c.-	cp /usr/lib/telegraf/scripts/telegraf.service /etc/systemd/system/
+	d.-	systemctl enable telegraf.service
+	e.-	usermod -aG docker telegraf
+	f.-	Nos conectamos mediante winscp al directorio de instalacion /etc/telegraf y aqui adaptamos el fichero telegraf.conf
+	g.-	service telegraf start
+	h.- chequeamos que este corriendo con service telegraf status
+
+
+5.-	En Grafana cargamos el dashboard.
+
+6.-	Podemos instalar el sofware chronograf. Se trata de un visor de la base de datos INFLUXDB para Windows. Para ello ejecutamos el fichero 
+	chronograf el cual arrancara un webserver en el puerto 8888 del localhost. 
+	
+	a.-	Abrimos en un browser http://localhost:8888
+	b.-	En la pestaña de Configuracion (la ultima) configuramos la conexion a la Influxdb
+	c.- En la pestaña InfluxDB Admin, ya vemos la base de datos TELEGRAF.
+	d.-	En la pestaña Explore, podremos conectarnos a la base de datos y ver los datos que hay alli e incluso ejecutar querys
+
+
+7.-	Para instalar el docker-compose en SUSE lo haremos con el siguiente comando:
+
+		a.- zypper install docker-compose
+
+---------------------------------------------------
+TELEGRAF EN WINDOWS PARA MONITORIZAR LOS APPSERVERS
+---------------------------------------------------
+
+0.-	Copiamos el war jolokia.war en el Webapps directory para que se despliegue el solo.
+1.-	Nos creameos la carpeta telegraf en c:\Program Files
+2.-	Copiamos el telegraf.conf customizado nuestro.
+3.-	Lo configuramos como un servicio ejecutando desde el Power Shell:
+
+	a.-	cd 'C:\Program Files'
+	b.-	.\telegraf --service install --config-directory 'C:\Program Files\telegraf\conf'
+	c.- net start
+
+4.-	Chequeamos que este mandando cosas, desde el Power Shell:
+
+	a.-	.\telegraf --config-directory 'C:\Program Files\telegraf\conf' --test

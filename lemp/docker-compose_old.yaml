@@ -1,0 +1,113 @@
+version: "3.3"
+services:
+  nginx-proxy:
+    image: claclin73/nginx_proxy:1.1
+    container_name: nginx_proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /home/claudi/certs:/etc/nginx/certs:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+      
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    restart: always
+    volumes:
+      - /home/claudi/certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - nginx-proxy:rw
+
+  web:
+    image: claclin73/ngnix:1.25.1
+    container_name: web2
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - /home/claudi/MANUALES/:/var/www/html/
+      - /home/claudi/MANUALES/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php-fpm
+    environment:
+      - VIRTUAL_HOST=botclaudi.ddns.net
+      - LETSENCRYPT_HOST=botclaudi.ddns.net
+      - LETSENCRYPT_EMAIL=claclin73@gmail.com
+
+  web3:
+    image: claclin73/ngnix:1.25.1
+    container_name: web3
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - /home/claudi/MANUALES2/:/var/www/html/
+      - /home/claudi/MANUALES2/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php-fpm
+    environment:
+      - VIRTUAL_HOST=conocimientos.ddns.net
+      - LETSENCRYPT_HOST=conocimientos.ddns.net
+      - LETSENCRYPT_EMAIL=oscarramiro73@gmail.com
+
+  # Configuración de php-fpm
+  php-fpm:
+    image: php:8-fpm
+    container_name: php
+    restart: always
+    volumes:
+      - /home/claudi/MANUALES:/var/www/html
+
+  mysql:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    ports: 
+        - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: claudi 
+    volumes:
+        - /home/claudi/mariadb/persistent:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: admin
+    restart: always
+    links: 
+        - mysql:mysql
+    ports:
+        - "3309:80"
+    environment:
+        MYSQL_USERNAME: root
+        MYSQL_ROOT_PASSWORD: claudi
+        PMA_HOST: mysql
+  flowise:
+    image: flowiseai/flowise
+    container_name: flowi
+    restart: always
+    environment:
+        PORT: 8001
+        DATABASE_TYPE:  mysql
+        DATABASE_PORT:  "3306"
+        DATABASE_HOST:  "192.168.1.200"
+        DATABASE_NAME:  "flowise"
+        DATABASE_USER:  "root"
+        DATABASE_PASSWORD:  "claudi"
+        FLOWISE_USERNAME:  claudi
+        FLOWISE_PASSWORD:  Erandio21.
+        FLOWISE_SECRETKEY_OVERWRITE:  Erandio21.
+        LOG_PATH:  /root/.flowise/logs
+        DEBUG: true
+        LOG_LEVEL:  debug
+    
+    ports:
+        - "8001:8001"
+    volumes:
+            - /home/claudi/Docker/flowi:/root/.flowise
+    command: /bin/sh -c "sleep 3; flowise start"

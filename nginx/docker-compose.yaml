@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx_proxy_5
+    restart: always
+    ports:
+      - "8321:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  proxy:
+    image: claclin73/ngnix:2.0
+    container_name: web5
+    restart: always
+    expose:
+      - "80"
+    environment:
+      VIRTUAL_HOST: conocimientos.ddns.net
+    volumes:
+      - /home/claudi/MANUALES2/index.html:/usr/share/nginx/html/index.html:ro
+      - /home/claudi/MANUALES2/:/usr/share/nginx/html/
+ 

@@ -1,0 +1,79 @@
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['172.100.44.33:9090']
+
+  - job_name: 'loki'
+    static_configs:
+    - targets: ['172.100.44.33:3100']
+  
+  - job_name: 'server_grabadora'
+    static_configs:
+    - targets: ['172.100.44.33:9100']
+      labels:
+        tipo: Aplicacion
+        entorno: Laboratorio
+        cliente: Claudio
+        servidor: grabadora
+
+  - job_name: 'docker_grabadora'
+    static_configs:
+    - targets: ['172.100.44.33:8080']
+      labels:
+        entorno: Laboratorio
+        maquina: Grabadora
+
+
+  - job_name: 'Grabadora_client'
+    static_configs:
+    - targets: ['192.168.250.107:9100']
+      labels:
+        tipo: Aplicacion
+        entorno: Laboratorio
+        cliente: Claudio
+        servidor: Grabadora_client
+
+  - job_name: 'docker_Grabadora_client'
+    static_configs:
+    - targets: ['192.168.250.107:8080']
+      labels:
+        entorno: Laboratorio
+        maquina: Grabadora_client
+
+  - job_name: 'docker_WebRTC'
+    static_configs:
+    - targets: ['192.168.250.55:8080']
+      labels:
+        entorno: Laboratorio
+        maquina: WebRTC
+
+  - job_name: 'server_WebRTC'
+    static_configs:
+    - targets: ['192.168.250.55:9100']
+      labels:
+        tipo: Aplicacion
+        entorno: Laboratorio
+        cliente: Claudio
+        servidor: webrtc
+
+  - job_name: 'server_ivr'
+    static_configs:
+    - targets: ['172.100.44.100:9100']
+      labels:
+        tipo: Aplicacion
+        entorno: Laboratorio
+        cliente: Claudio
+        servidor: ivr
+
+  - job_name: 'docker_ivr'
+    static_configs:
+    - targets: ['172.100.44.100:8080']
+      labels:
+        entorno: Laboratorio
+        maquina: IVR
+    #metrics_path: '/metrics'
+    #metrics_path: '/prometheus'
