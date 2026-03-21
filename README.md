@@ -11,4 +11,8 @@ Aqui encontraras mis proyectos con Dockers.:+1:
 * Nginx.
 * Y mucho mas...
 
-Nuevos desarrollos
+## Nuevos desarrollos
+* Portainer.
+* Pila prometheus y Loki.
+* Docker Swarm.
+* CI/CD con Jenkins.
